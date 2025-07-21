@@ -1,54 +1,46 @@
-import "./globals.css";
-import { Providers } from "./providers";
-import { Toaster } from "sonner";
-import { Inter } from "next/font/google";
-import type { Metadata } from "next";
+import './globals.css'
+import { Providers } from './providers'
+import { Toaster } from 'sonner'
+import { Inter } from 'next/font/google'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Dominote",
-  applicationName: "Dominote",
-  description: "Hamtana Project Manager",
+  title: 'Dominote',
+  applicationName: 'Dominote',
+  description: 'Hamtana Project Manager',
   icons: {
-    icon: "/favicon.svg",
-    apple: "/apple-icon.png",
-    shortcut: "/favicon.ico",
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+    shortcut: '/favicon.ico',
   },
-  manifest: "/manifest.json",
+  manifest: '/manifest.json',
   appleWebApp: {
-    title: "Dominote",
+    title: 'Dominote',
     capable: true,
-    statusBarStyle: "default",
-    startupImage: "/dominote-logo.png"
-  }
-};
+    statusBarStyle: 'default',
+    startupImage: '/dominote-logo.png',
+  },
+}
 
 export function generateViewport() {
   return {
-    width: "device-width",
+    width: 'device-width',
     initialScale: 1,
     maximumScale: 1,
-    userScalable: "no",
-    themeColor: "000000",
-  };
+    userScalable: 'no',
+    themeColor: '000000',
+  }
 }
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${inter.className} h-dvh flex flex-col dark`}
-    >
-      <body className="flex flex-col grow text-zinc-200 ">
+    <html lang='en' suppressHydrationWarning className={`${inter.className} h-dvh flex flex-col dark`}>
+      <body className='flex flex-col grow text-zinc-200 '>
         <Toaster />
         <Providers>{children}</Providers>
       </body>
     </html>
-  );
+  )
 }
