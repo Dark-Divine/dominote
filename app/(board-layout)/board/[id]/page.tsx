@@ -78,7 +78,7 @@ export default async function BoardPage(
     }
 
     return (
-      <main className="flex flex-col grow min-w-0 bg-cover bg-center bg-zinc-900 relative">
+      <main className="flex flex-col grow min-w-0 bg-cover bg-center bg-[#202020] relative">
         {board.backgroundUrl && (
           <Image
             className="object-cover object-center z-0"
@@ -87,7 +87,7 @@ export default async function BoardPage(
             fill
           />
         )}
-        <BoardNavbar boardId={board.id} boardTitle={board.title} />
+        {/* <BoardNavbar boardId={board.id} boardTitle={board.title} /> */}
         <Board board={board} />
       </main>
     );

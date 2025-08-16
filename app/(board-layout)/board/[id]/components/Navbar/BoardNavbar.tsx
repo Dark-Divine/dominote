@@ -17,7 +17,7 @@ export default async function BoardNavbar({
 }) {
   return (
     <div className="mb-5 z-10">
-      <div className="flex justify-between items-center bg-zinc-950 px-5 py-2 overflow-x-auto no-scrollbar gap-2">
+      <div className="flex justify-between items-center  px-5 py-2 overflow-x-auto no-scrollbar gap-2">
         <div className="flex gap-2 items-center">
           <BoardTitle boardTitle={boardTitle} boardId={boardId} />
           <Suspense

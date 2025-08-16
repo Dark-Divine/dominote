@@ -129,7 +129,7 @@ export default function ColumnActions({
       ) : (
         <>
           <h3
-            className="text-large text-zinc-300"
+            className="font-bold text-zinc-300"
             onClick={() => setIsEditing(true)}
           >
             {columnTitle}

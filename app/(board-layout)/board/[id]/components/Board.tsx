@@ -157,13 +157,13 @@ export default function Board({ board }: { board: BoardWithColumns }) {
                         </CardHeader>
                         <Droppable droppableId={column.id} type="TASK">
                           {(provided) => (
-                            <CardBody className="bg-zinc-950">
+                            <CardBody className="bg-transparent">
                               <div
                                 ref={provided.innerRef}
                                 {...provided.droppableProps}
                               >
                                 {column.tasks.length === 0 ? (
-                                  <div className="bg-zinc-900 text-center text-xs py-4 rounded-lg border-dashed border-2 border-zinc-700">
+                                  <div className="bg-transparent text-center text-xs py-4 rounded-lg border-dashed border-2 border-zinc-700">
                                     Drop here
                                   </div>
                                 ) : (

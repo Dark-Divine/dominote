@@ -6,7 +6,7 @@ export default function TaskDetailWrapper({
 }) {
   return (
     <Card className="z-10">
-      <CardBody className="bg-zinc-950">{children}</CardBody>
+      <CardBody className="bg-[#191919]">{children}</CardBody>
     </Card>
   );
 }

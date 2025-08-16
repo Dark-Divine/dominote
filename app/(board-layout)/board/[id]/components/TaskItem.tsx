@@ -52,14 +52,7 @@ export default function TaskItem({ task, dragHandleProps }: TaskItemProps) {
   ]);
 
   return (
-    <div className="bg-zinc-900 text-white flex select-none rounded-md hover:shadow-md hover:ring-2 hover:ring-primary">
-      <div
-        className="pl-1 pr-1 flex items-center cursor-grab touch-none"
-        {...dragHandleProps}
-      >
-        <IconGripVertical className="text-primary" size={24} />
-      </div>
-
+    <div className="bg-[#191919] border-1 px-3 py-2 border-[#262626] text-white flex select-none rounded-md pl-2 hover:shadow-md hover:ring-2 hover:ring-primary" {...dragHandleProps}>
       <Link className="flex-grow pr-3 py-2" href={`/task/${task.id}`}>
         {task.labels.length > 0 && (
           <div className="grid grid-cols-5 gap-1 w-full mb-1">
