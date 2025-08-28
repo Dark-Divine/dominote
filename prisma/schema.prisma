@@ -38,28 +38,47 @@ model Session {
 }
 
 model User {
-  id               String           @id @default(cuid())
+  id               String            @id @default(cuid())
   name             String?
-  email            String?          @unique
+  email            String?           @unique
   emailVerified    DateTime?
   image            String?
   accounts         Account[]
   sessions         Session[]
   labels           Label[]
   activities       Activity[]
-  favoriteBoards   Board[]          @relation("favorites")
+  favoriteBoards   Board[]           @relation("favorites")
   memberBoards     BoardMember[]
-  assignedTasks    TaskAssignment[] @relation("UserAssignments")
-  createdTasks     Task[]           @relation("CreatedByRelation")
-  sentInvitations  Invitation[]     @relation("UserToInvitation")
-  targetActivities Activity[]       @relation("TargetUser")
+  assignedTasks    TaskAssignment[]  @relation("UserAssignments")
+  createdTasks     Task[]            @relation("CreatedByRelation")
+  sentInvitations  Invitation[]      @relation("UserToInvitation")
+  targetActivities Activity[]        @relation("TargetUser")
+  Note             Note[]
+  Workspace        Workspace[]
+  WorkspaceMember  WorkspaceMember[]
 }
 
-// model MyFav {
-//   id String @id @default(cuid())
-//   title String
-  
-// }
+model Workspace {
+  userId          String
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title           String
+  WorkspaceMember WorkspaceMember[]
+  Board           Board[]
+  createdAt       DateTime          @default(now())
+
+  @@id([userId])
+}
+
+model WorkspaceMember {
+  userId      String
+  workspaceId String
+  role        Role
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workspace   Workspace @relation(fields: [workspaceId], references: [userId], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+
+  @@id([userId, workspaceId])
+}
 
 model VerificationToken {
   identifier String
@@ -74,6 +93,15 @@ enum Role {
   owner
 }
 
+model Note {
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title  String
+  text   String
+
+  @@id([userId])
+}
+
 model BoardMember {
   userId    String
   boardId   String
@@ -86,17 +114,19 @@ model BoardMember {
 }
 
 model Board {
-  id            String        @id @default(cuid())
-  title         String
-  backgroundUrl String?
-  columns       Column[]
-  labels        Label[]
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-  activities    Activity[]
-  favoritedBy   User[]        @relation("favorites")
-  members       BoardMember[]
-  invitations   Invitation[]
+  id              String        @id @default(cuid())
+  title           String
+  backgroundUrl   String?
+  columns         Column[]
+  labels          Label[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  activities      Activity[]
+  favoritedBy     User[]        @relation("favorites")
+  members         BoardMember[]
+  invitations     Invitation[]
+  Workspace       Workspace?    @relation(fields: [workspaceUserId], references: [userId])
+  workspaceUserId String?
 }
 
 model Column {
