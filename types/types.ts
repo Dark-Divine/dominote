@@ -1,5 +1,4 @@
 import {
-  Board,
   Column,
   Task,
   Activity,
@@ -133,3 +132,29 @@ export type TaskDeletionData = {
   boardId: Board["id"];
   columnId: Column["id"];
 };
+
+export type UserTasks = {
+  userId: string;
+  taskId: string;
+  task: Task;
+};
+
+export type Note = {
+  userId: string;
+  text: string;
+  title: string
+};
+
+export type Board = {
+  id: string;
+  title: string;
+  backgroundUrl: string | null;
+};
+
+export type UserBoards = {
+  userId: string;
+  boardId: string;
+  board: Board;
+};
+
+

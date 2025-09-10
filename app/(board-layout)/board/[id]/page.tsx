@@ -21,7 +21,6 @@ export default async function BoardPage(
   }
 
   try {
-    // Check if user is a member of the board
     const isMember = await prisma.boardMember.findFirst({
       where: {
         boardId: params.id,
@@ -29,16 +28,13 @@ export default async function BoardPage(
       },
     });
 
-    // Redirect to board list if user is not a member
     if (!isMember) {
       redirect("/board");
     }
 
-    // Parse labels from searchParams
     const labelFilter = searchParams.labels?.split(",") || [];
 
-    // Fetch board with columns and tasks
-    const board: BoardWithColumns | null = await prisma.board.findUnique({
+    const board = await prisma.board.findUnique({
       where: { id: params.id },
       include: {
         columns: {
@@ -49,14 +45,14 @@ export default async function BoardPage(
               where:
                 labelFilter.length > 0
                   ? {
-                      labels: {
-                        some: {
-                          id: {
-                            in: labelFilter,
-                          },
+                    labels: {
+                      some: {
+                        id: {
+                          in: labelFilter,
                         },
                       },
-                    }
+                    },
+                  }
                   : undefined,
               include: {
                 labels: true,
@@ -72,7 +68,6 @@ export default async function BoardPage(
       },
     });
 
-    // Return if board is not found
     if (!board) {
       return <div>Board not found</div>;
     }
