@@ -72,7 +72,7 @@ export default async function DashboardPage() {
 
             <section className='container w-full mx-auto'>
                 <h3 className='font-bold text-2xl'>Notes</h3>
-                <div className='w-full my-5'>
+                <div className='w-full my-5 flex flex-col gap-4'>
                     {notes.map((v, i) => (
                         <div key={v.title} className='p-4 bg-[#191919] border-1 border-[#262626] hover:bg-[#171819] rounded-xl w-[290px]'>
                             <h6 className='font-bold text-lg'>
@@ -89,7 +89,7 @@ export default async function DashboardPage() {
             <div className='h-[1px] w-full px-4 bg-white/10 my-5'></div>
             <section className='container w-full mx-auto'>
                 <h3 className='font-bold text-2xl'>Tasks</h3>
-                <div className='w-full my-5'>
+                <div className='w-full my-5 flex flex-col gap-2'>
                     {tasks.map((task, i) => (
                         <div key={task.taskId} className='p-4 bg-[#191919] border-1 border-[#262626] hover:bg-[#171819] rounded-xl w-[290px]'>
                             <h6 className='font-bold text-lg'>
