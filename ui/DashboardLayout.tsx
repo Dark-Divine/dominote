@@ -8,14 +8,14 @@ export default function DashboardLayoutComponent({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="h-full overflow-hidden">
       <Navbar>
         <NavbarAvatar />
       </Navbar>
-      <div className="flex grow">
+      <div className="flex grow h-full">
         <AppSidebar />
         {children}
       </div>
-    </>
+    </div>
   );
 }

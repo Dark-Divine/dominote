@@ -7,10 +7,6 @@
   scrollbar-width: none;
 }
 
-html,
-body {
-  background-color: #09090b;
-}
 
 @import "tailwindcss";
 @plugin '../lib/hero.ts';

@@ -14,6 +14,11 @@ interface NavItem {
 }
 
 const navData: NavItem[] = [
+  // {
+  //   path: "/dashboard",
+  //   title: "Dashboard",
+  //   icon: <IconUser stroke={1.5} size={24} />,
+  // },
   {
     path: "/profile",
     title: "Profile",
@@ -44,12 +49,9 @@ export default function NavbarWrapper({
           <button onClick={toggleDropdown} className="mr-3 block lg:hidden">
             <IconMenu2 size={24} />
           </button>
-
           <NavbarTitle />
         </div>
-
         <div className="flex gap-5 items-center justify-between">
-          <ColourPicker />
           {children}
         </div>
       </div>

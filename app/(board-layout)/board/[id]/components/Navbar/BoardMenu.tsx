@@ -21,7 +21,7 @@ export default function BoardMenu({ boardId }: { boardId: string }) {
     ) {
       const response = await handleDeleteBoard(boardId);
       if (response.success) {
-        router.push("/board/");
+        router.push("/dashboard");
         toast.success("Board Deleted");
       } else {
         toast.error(response.message);

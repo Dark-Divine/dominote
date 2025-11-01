@@ -1,14 +1,10 @@
-import DashboardLayoutComponent from '@/ui/DashboardLayout';
-import React from 'react'
+import DashboardLayoutComponent from "@/ui/DashboardLayout";
+import React from "react";
 
 export default function DashboardLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    return (
-        <DashboardLayoutComponent>
-            {children}
-        </DashboardLayoutComponent>
-    )
+  return <DashboardLayoutComponent>{children}</DashboardLayoutComponent>;
 }

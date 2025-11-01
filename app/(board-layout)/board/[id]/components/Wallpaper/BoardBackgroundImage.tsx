@@ -1,7 +1,7 @@
 "use client";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useUIContext } from "@/contexts/UIContext";
 import { Button } from "@heroui/button";
 import { Input } from "@heroui/input";
 import Image from "next/image";
@@ -18,17 +18,8 @@ interface FormData {
 }
 
 export default function BoardBackgroundImage({ boardId }: { boardId: string }) {
-  const { uiState, toggleBackgroundImageSelector } = useUIContext();
   const { register, handleSubmit } = useForm<FormData>();
   const [images, setImages] = useState<string[]>([]);
-
-  if (!uiState.isBackgroundImageSelectorOpen) {
-    return null;
-  }
-
-  const handleClose = () => {
-    toggleBackgroundImageSelector();
-  };
 
   const handleDeleteBackground = async () => {
     if (
@@ -77,9 +68,6 @@ export default function BoardBackgroundImage({ boardId }: { boardId: string }) {
           />
           <Button type="submit" color="primary">
             Search
-          </Button>
-          <Button isIconOnly type="button" onClick={handleClose}>
-            <IconX size={16} />
           </Button>
           <Button
             isIconOnly

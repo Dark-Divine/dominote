@@ -29,7 +29,7 @@ export default async function BoardPage(
     });
 
     if (!isMember) {
-      redirect("/board");
+      redirect("/dashboard");
     }
 
     const labelFilter = searchParams.labels?.split(",") || [];
