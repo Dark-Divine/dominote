@@ -7,6 +7,9 @@
   scrollbar-width: none;
 }
 
+.board {
+  height: calc(100dvh - 56px);
+}
 
 @import "tailwindcss";
 @plugin '../lib/hero.ts';

@@ -52,12 +52,12 @@ export default async function DashboardPage() {
     // })
 
     return (
-        <main className='w-full pt-10 bg-[#202020]'>
+        <main className='w-full pt-10 bg-[#212129]'>
             {/* <section className='container w-full mx-auto'>
                 <h3 className='font-bold text-2xl'>Boards</h3>
                 <div className='w-full my-5'>
                     {boards.map((board, i) => (
-                        <div key={board..title} className='p-4 bg-[#191919] border-1 border-[#262626] hover:bg-[#171819] rounded-xl w-[290px]'>
+                        <div key={board..title} className='p-4 bg-[#191920] border-1 border-[#262626] hover:bg-[#171819] rounded-xl w-[290px]'>
                             <h6 className='font-bold text-lg'>
                                 {v.title}
                             </h6>
@@ -74,7 +74,7 @@ export default async function DashboardPage() {
                 <h3 className='font-bold text-2xl'>Notes</h3>
                 <div className='w-full my-5 flex flex-col gap-4'>
                     {notes.map((v, i) => (
-                        <div key={v.title} className='p-4 bg-[#191919] border-1 border-[#262626] hover:bg-[#171819] rounded-xl w-[290px]'>
+                        <div key={v.title} className='p-4 bg-white/5 border-1 border-white/10 hover:bg-white/10 rounded-xl w-[290px]'>
                             <h6 className='font-bold text-lg'>
                                 {v.title}
                             </h6>
@@ -91,7 +91,7 @@ export default async function DashboardPage() {
                 <h3 className='font-bold text-2xl'>Tasks</h3>
                 <div className='w-full my-5 flex flex-col gap-2'>
                     {tasks.map((task, i) => (
-                        <div key={task.taskId} className='p-4 bg-[#191919] border-1 border-[#262626] hover:bg-[#171819] rounded-xl w-[290px]'>
+                        <div key={task.taskId} className='p-4 bg-white/5 border-1 border-white/10 hover:bg-white/10 rounded-xl w-[290px]'>
                             <h6 className='font-bold text-lg'>
                                 {task.task.title}
                             </h6>

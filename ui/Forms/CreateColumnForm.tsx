@@ -37,7 +37,7 @@ export default function CreateColumnForm({ boardId }: { boardId: string }) {
 
   return (
     <div>
-      <div className="shrink-0 w-64 md:w-72 h-32 lg:w-80 ml-2 bg-zinc-950 p-3 rounded-xl ">
+      <div className="shrink-0 w-64 md:w-72 h-32 lg:w-80 ml-2 mt-4 border-1 border-white/10 bg-white/5 hover:bg-white/10 p-3 rounded-xl ">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col justify-between h-full"
@@ -46,6 +46,11 @@ export default function CreateColumnForm({ boardId }: { boardId: string }) {
             autoComplete="off"
             type="text"
             id="columnTitle"
+            variant="bordered"
+            color="primary"
+            classNames={{
+              inputWrapper: "border-1 border-white/10",
+            }}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="w-full"
@@ -60,7 +65,7 @@ export default function CreateColumnForm({ boardId }: { boardId: string }) {
             <Button
               type="submit"
               isLoading={isSubmitting}
-              className="gap-1"
+              className="gap-1 bg-[#191920]"
               size="sm"
               variant="flat"
             >

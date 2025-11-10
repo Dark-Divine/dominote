@@ -29,7 +29,7 @@ interface MenuItemProps {
 // Sidebar Parent
 export function Sidebar({ children }: SidebarProps) {
   return (
-    <div className="w-64 fixed left-0 top-0 bottom-0 lg:relative lg:top-0 shrink-0 grow-0 bg-[#191919] z-50 hidden lg:block border-r-1 border-zinc-900">
+    <div className="w-64 fixed left-0 top-0 bottom-0 lg:relative lg:top-0 shrink-0 grow-0 bg-[#191920] z-50 hidden lg:block border-r-1 border-zinc-900">
       {children}
     </div>
   );

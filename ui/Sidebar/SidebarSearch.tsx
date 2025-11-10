@@ -7,6 +7,7 @@ export default function SidebarSearch() {
     <div className="px-5 pt-2">
       <Input
         placeholder="Search..."
+      
         radius="sm"
         size="sm"
         isClearable

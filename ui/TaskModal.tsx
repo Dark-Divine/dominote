@@ -18,6 +18,7 @@ export default function TaskModal({ children }: { children: React.ReactNode }) {
       size="5xl"
       scrollBehavior="outside"
       backdrop="blur"
+      shadow="none"
     >
       <ModalContent>
         <ModalBody className="p-0 gap-0">{children}</ModalBody>

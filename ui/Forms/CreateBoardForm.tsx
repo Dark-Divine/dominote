@@ -37,7 +37,7 @@ export default function CreateBoardForm() {
   };
 
   return (
-    <div className="p-3 bg-zinc-950 rounded-xl shadow-xl h-32">
+    <div className="p-3 bg-white/5 border-1 border-white/10 rounded-xl shadow-xl h-32">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col h-full justify-between"
@@ -55,13 +55,16 @@ export default function CreateBoardForm() {
           isRequired
           isInvalid={isInvalid}
           errorMessage={errorMessage}
+          classNames={{
+            inputWrapper: "bg-[#191920]",
+          }}
         />
         <div>
           <Button
             type="submit"
             size="sm"
             variant="flat"
-            className="gap-1"
+            className="gap-1 bg-[#191920]"
             isLoading={isSubmitting}
           >
             <IconPlus size={16} className="shrink-0" />

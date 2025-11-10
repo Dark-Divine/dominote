@@ -44,7 +44,7 @@ export default function NavbarWrapper({
 
   return (
     <nav className="flex flex-col">
-      <div className="flex gap-2 items-center justify-between px-5 py-2 bg-[#191919] text-zinc-200 border-b-1 border-[#262626] h-14">
+      <div className="flex gap-2 items-center justify-between px-5 py-2 bg-[#191920] text-zinc-200 border-b-1 border-[#262626] h-14">
         <div className="flex items-center">
           <button onClick={toggleDropdown} className="mr-3 block lg:hidden">
             <IconMenu2 size={24} />

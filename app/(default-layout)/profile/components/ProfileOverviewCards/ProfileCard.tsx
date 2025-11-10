@@ -10,7 +10,7 @@ interface ProfileCardProps {
 
 export default function ProfileCard({ icon, countComponent, label }: ProfileCardProps) {
   return (
-    <div className="text-center space-y-2 bg-[#191919] border-1 border-[#262626] p-5 rounded-lg">
+    <div className="text-center space-y-2 bg-white/5 border-1 border-white/10 p-5 rounded-lg">
       <div className="flex justify-center">{icon}</div>
       <div className="font-semibold text-xl flex flex-col items-center">
         <Suspense fallback={<IconLoader2 size={28} className="animate-spin" />}>{countComponent}</Suspense>

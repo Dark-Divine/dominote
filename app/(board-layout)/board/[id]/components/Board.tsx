@@ -123,7 +123,7 @@ export default function Board({ board }: { board: BoardWithColumns }) {
         >
           {(provided) => (
             <div
-              className="grow flex overflow-x-scroll px-2"
+              className="flex overflow-x-scroll h-screen px-2 board"
               ref={provided.innerRef}
               {...provided.droppableProps}
             >

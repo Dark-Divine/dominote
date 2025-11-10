@@ -45,7 +45,7 @@ export default async function SidebarMenu() {
   return (
     <Sidebar>
       <SidebarHeader />
-      <SidebarSearch />
+      {/* <SidebarSearch /> */}
       <hr className="border-zinc-900 my-3" />
       <Menu>
         <MenuItem path="/profile" title="Profile" icon={<IconUser stroke={1.5} size={20} />} />
