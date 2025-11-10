@@ -10,7 +10,7 @@ export default function HomeComponent() {
   const router = useRouter();
 
   return (
-    <div className="h-full">
+    <div className="h-full px-2">
       <MainHeader />
       <main className="flex flex-col items-center justify-center gap-6 w-screen container mx-auto overflow-hidden text-neutral-800 main-home h-full -mt-16">
         <p className="font-medium text-4xl dark:text-white">
